@@ -1,0 +1,89 @@
+clear
+cat in1
+sleep .2
+clear
+cat in2
+sleep .2
+clear
+cat in3
+sleep .2
+clear
+cat in4
+sleep .2
+clear
+cat in5
+sleep .2
+clear
+cat in6
+sleep .2
+clear
+cat in7
+sleep .2
+clear
+cat in8
+sleep .2
+clear
+cat in9
+sleep .2
+#2nd time
+clear
+cat in1
+sleep .2
+clear
+cat in2
+sleep .2
+clear
+cat in3
+sleep .2
+clear
+cat in4
+sleep .2
+clear
+cat in5
+sleep .2
+clear
+cat in6
+sleep .2
+clear
+cat in7
+sleep .2
+clear
+cat in8
+sleep .2
+clear
+cat in9
+sleep .2
+#3rd time
+clear
+cat in1
+sleep .2
+clear
+cat in2
+sleep .2
+clear
+cat in3
+sleep .2
+clear
+cat in4
+sleep .2
+clear
+cat in5
+sleep .2
+clear
+cat in6
+sleep .2
+clear
+cat in7
+sleep .2
+clear
+cat in8
+sleep .2
+clear
+cat in9
+sleep .2
+clear
+./shortscript
+
+
+
+

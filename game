@@ -1,0 +1,279 @@
+
+#This is a simple game that will add points and keep score.
+
+clear
+
+points=0
+dater=`date +%D`
+
+	echo
+	echo
+echo "is today $dater ?  y or n:"
+read answer
+if [ $answer = y ]
+then
+	echo
+	echo
+	echo "Correct! You gained +1 pts!"
+	echo
+	points=$(($points + 1))
+	echo
+	echo "		Points: $points"
+	echo
+	sleep 2
+	echo 
+	echo
+	echo "is 1 + 1 = 3 ?  y or n:"
+	read answer2
+	if [ $answer2 = y ]
+	then	
+		echo
+		echo
+		echo "Incorrect."
+		echo
+                echo "		Points: $points"
+		echo
+                sleep 2
+                echo
+                echo
+                echo "Was the color Orange named after the fruit? Or was the fruit named after the color?"
+                echo
+                echo "A.  The color was named after the fruit."
+                echo "B.  The fruit was named after the color."
+                echo
+                echo a or b:
+                echo; echo
+                read ab
+                if [ $ab = b ]
+                then
+                        echo
+                        echo
+                        echo "Incorrect."
+                        echo
+                        echo "		Points: $points"
+                        echo
+                        echo
+                        echo "CONGRATS!  You got $points out of 3 points!"
+			 echo;echo;echo "Would you like to play again? y or n:"
+                        read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+
+               else
+                        echo
+                        echo
+                        echo "Correct! You gained +1 pts!"
+                        points=$(($points + 1))
+                        echo
+                        echo "		Points: $points"
+                        echo
+                        echo
+                        echo "CONGRATS!  You got $points out of 3 points!"
+			 echo;echo;echo "Would you like to play again? y or n:"
+                        read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+	
+	fi
+
+	else
+		echo
+		echo
+		echo "Correct! You gained +1 pts!"
+		points=$(($points + 1))
+		echo
+		echo "		Points: $points"
+		echo
+		sleep 2
+		echo
+		echo	
+		echo "Was the color Orange named after the fruit? Or was the fruit named after the color?"
+		echo
+		echo "A.  The color was named after the fruit."
+		echo "B.  The fruit was named after the color."
+		echo
+		echo a or b:
+		echo; echo
+		read ab
+		if [ $ab = b ]
+		then
+		        echo
+        	        echo
+                	echo "Incorrect."
+                	echo
+                	echo "		Points: $points"
+               		echo
+               		echo
+                	echo "CONGRATS!  You got $points out of 3 points!"
+			 echo;echo;echo "Would you like to play again? y or n:"
+                        read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+
+ 	       else
+                	echo
+                	echo
+                	echo "Correct! You gained +1 pts!"
+                	points=$(($points + 1))
+                	echo
+                	echo "		Points: $points"
+			echo
+			echo
+			echo "CONGRATS!  You got $points out of 3 points!"
+		
+			 echo;echo;echo "Would you like to play again? y or n:"
+                        read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+
+	fi
+fi
+else
+	echo
+	echo
+	echo "Incorrect."
+	echo
+	echo
+	echo "		Points: $points"
+	echo
+	sleep 2
+	
+	echo
+	echo
+	echo "is 1 + 1 = 3 ?  y or n:"
+        read answer3
+        if [ $answer3 = y ]
+        then
+		echo
+		echo
+	        echo "Incorrect."
+                echo
+                echo "		Points: $points"
+                echo
+		sleep 2
+                echo
+                echo
+                echo "Was the color Orange named after the fruit? Or was the fruit named after the color?"
+                echo
+                echo "A.  The color was named after the fruit."
+                echo "B.  The fruit was named after the color."
+                echo
+                echo a or b:
+                echo; echo
+                read ab
+                if [ $ab = b ]
+                then
+                        echo
+                        echo
+                        echo "Incorrect."
+			echo
+                echo "		Points: $points"
+                echo
+                echo
+                echo "CONGRATS!  You got $points out of 3 points!"
+		 echo;echo;echo "Would you like to play again? y or n:"
+                        read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+
+        else
+                        echo
+                        echo
+                        echo "Correct! You gained +1 pts!"
+                        points=$(($points + 1))
+                        echo
+                        echo "		Points: $points"
+                        echo
+                        echo "CONGRATS!  You got $points out of 3 points!"
+			 echo;echo;echo "Would you like to play again? y or n:"
+                        read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+
+  fi
+
+
+      else
+		echo
+		echo
+       		echo "Correct! You gained +1 pts!"
+        	points=$(($points + 1))
+        	echo
+		echo
+        	echo "		Points: $points"
+		echo
+        	sleep 2
+		echo
+                echo
+                echo "Was the color Orange named after the fruit? Or was the fruit named after the color?"
+                echo
+                echo "A.  The color was named after the fruit."
+                echo "B.  The fruit was named after the color."
+                echo
+                echo a or b:
+                echo; echo
+                read ab
+                if [ $ab = b ]
+                then
+                        echo
+                	echo
+                	echo "Incorrect."
+                echo
+                echo "		Points: $points"
+                echo
+                echo
+                echo "CONGRATS!  You got $points out of 3 points!"
+               		 echo;echo;echo "Would you like to play again? y or n:"
+			read yn2
+			if [ $yn2 = y ]
+			then
+				./game2
+			else
+				./shortscript
+			fi
+       		else
+                	echo
+               		echo
+               	 	echo "Correct! You gained +1 pts!"
+                	points=$(($points + 1))
+                	echo
+             		echo "		Points: $points"
+                	echo
+                	echo "CONGRATS!  You got $points out of 3 points!"
+               		 echo;echo;echo "Would you like to play again? y or n:"
+			read yn2
+                        if [ $yn2 = y ]
+                        then
+                                ./game2
+                        else
+                                ./shortscript
+                        fi
+
+
+	fi	
+	fi
+	fi

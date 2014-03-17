@@ -1,0 +1,250 @@
+#Isabel Huckaby
+#CTEC 140
+#Final Project script
+#November 2013
+
+#
+# TABLE OF CONTENTS:
+#
+# :40 OPTION 1 : CRYPTOQUIP
+# :61 OPTION 2 : WHO | SORT ANIMATION
+# :88 OPTION 3 : BACKUP / COPY A FILE
+# :144 OPTION 4 : CUSTOM CALENDAR
+# :153 OPTION 5 : SHORT ANIMATION
+# :169 OPTION 6 : PLAY HEADS OR TAILS
+# :180 OPTION 7 : SEE SCOREBOARD
+# :195 OPTION 8 : WATCH STAR WARS
+# :225 OPTION 9 : EXIT
+# :235 Error Message
+#
+
+clear
+
+#types, hello...here to guide you:
+# ./typeintro
+# loop ^
+
+# MENU:
+./menu
+echo
+# Graphical menu appears above, ask for user input, assign "choice" variable:
+echo -en "\e[1;31m Please type the menu\e[0m\e[0;32m item number\e[0m\e[1;31m to select it:  \e[0m"
+read choice
+echo;echo
+#
+#END MENU
+#
+#
+#
+#
+#Choice 1: PLAY CRYPTOQUIP :
+#
+if [ $choice = 1 ]
+then
+	./cryptoquip
+
+fi
+#end choice 3
+#
+#choice 2: See who else is on:
+
+if [ $choice = 2 ]
+then
+	#ghost animation; who else is on:
+# 	./ghostwho
+	#type command as user:
+ 	./typewho
+
+	echo;echo
+	echo;echo
+	who | sort
+	echo
+	echo;echo
+        echo -n "Press any key to continue."
+        read cont
+        if [ $cont -eq 1 ]
+        then
+               ./shortscript
+        else
+                ./shortscript
+        fi
+
+fi
+
+#end choice 2
+#
+#choice 3: Backup or copy a file:
+#
+if [ $choice = 3 ]
+then
+        clear        
+	echo
+	echo "Your files are:"
+	echo;echo
+	ls
+	echo; echo
+	echo "Which file in this directory would you like to back up?"
+	echo
+	echo -n "File name: "
+	read filename
+# make sure file exits for reading
+        if [ ! -f $filename ]
+        then
+                echo "Filename $filename does not exist"
+                sleep 2
+                ./shortscript
+        else
+		echo; echo
+		echo "What would you like to call this new file?"
+		echo
+		echo
+		echo "WARNING: An existing file will be overwritten. Add ".bak" extension to keep same file name."
+		echo
+		echo
+		echo -n "New file name: "
+		read newfilename
+		echo
+		cp $filename $newfilename
+		clear
+		echo 	
+		echo "Copy Complete! $newfilename has been created."
+		echo; echo
+		echo "1. See your files"
+		echo "2. Go back to main menu"
+		echo; echo -n "Select '1' or '2': "
+		read num	
+		if [ $num = 1 ]
+		then
+			echo;echo
+			ls
+			echo;echo
+			echo -n "Press <ENTER> key to continue."
+			read mm
+			if [ $mm -eq 1 ]
+			then
+				./shortscript
+			else
+				./shortscript
+			fi
+		else
+			./shortscript
+		fi
+	fi
+fi
+#
+#end choice 3
+#
+#Choice 4: Calendar birthday
+#
+if [ $choice = 4 ]
+then
+        ./birthday
+fi
+#
+#End choice 4
+#
+#Choice 5: animation
+#
+
+
+if [ $choice = 5 ]
+then
+	clear
+	cd ~/Art/animation.scripts/walking.animation/
+	./run2
+#	cd ~/ScriptsCTEC140/CTEC140final/runfiles/
+#	./shortscript
+fi
+#
+#End choice 5
+#
+# CHOICE 6: Play a heads or tails
+
+if [ $choice = 6 ]
+then
+        clear
+        ./headtails
+fi
+
+# END CHOICE 6
+#
+#Choice 7: See Score board
+#
+
+if [ $choice = 7 ]
+then
+	clear
+	echo;echo "	TOP 15 HEADS OR TAILS SCORES:"
+	echo;echo
+	cat htscoreboard | sort -rn | head -15
+	echo;echo
+	echo "Press <ENTER> to continue"
+	read ignore
+        ./shortscript
+
+fi
+
+# END CHOICE 7
+#
+#
+#
+# CHOICE 8: WATCH STAR WARS
+#
+if [ $choice = 8 ]
+then
+	clear
+	echo "You are about to watch STAR WARS modified in ASCII to run in the shell"
+	echo
+	echo
+	echo
+	echo
+	echo "		To pause the movie, you cam hit CNTRL + ]"
+	echo
+	echo "		When you are ready to continue, type: y"
+	echo
+	echo "	If you would like to return to the menu, type any other character(s)"
+	echo
+	echo
+	read watch
+	if [ $watch = y ]
+	then
+		telnet towel.blinkenlights.nl
+	else
+		./shortscript
+fi
+fi
+
+#
+#END CHOICE 8
+#
+#
+# CHOICE 9 : EXIT
+#
+if [ $choice = 9 ]
+then
+	./goodbye!
+	exit 
+fi
+#
+# END CHOICE 8
+#
+# ERROR MESSAGE:
+
+if [ $choice -ge 10 ]
+then
+	echo
+	echo "Your selection must be an integer between 1 and 8."
+	sleep 3
+	./shortscript
+
+fi
+
+#if [ $# -ne 1 ]
+#then
+#        echo
+#        echo "Your selection must be an integer between 1 and 8."
+#        sleep 3
+#        ./shortscript
+#
+#fi
+

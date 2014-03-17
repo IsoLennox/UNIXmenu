@@ -1,0 +1,60 @@
+clear
+cat bye1
+sleep .2
+clear
+cat bye2
+sleep .2
+clear
+cat bye3
+sleep .2
+clear
+cat bye4
+sleep .2
+clear
+cat bye5
+sleep .2
+clear
+cat bye6
+sleep .2
+clear
+cat bye7
+sleep .2
+clear
+cat bye8
+sleep .2
+clear
+cat bye9
+sleep .2
+#2nd time
+clear
+cat bye1
+sleep .2
+clear
+cat bye2
+sleep .2
+clear
+cat bye3
+sleep .2
+clear
+cat bye4
+sleep .2
+clear
+cat bye5
+sleep .2
+clear
+cat bye6
+sleep .2
+clear
+cat bye7
+sleep .2
+clear
+cat bye8
+sleep .2
+clear
+cat bye9
+sleep .2
+clear
+exit
+
+
+

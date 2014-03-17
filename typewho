@@ -1,0 +1,31 @@
+# Script by: Isabel Huckaby
+#
+# part of choice 2 in menu
+#animation to make it seem as if you are watching user typing out who command
+
+
+clear
+echo
+echo "$USER:~$"
+sleep .2; clear; echo
+echo "$USER:~$"
+sleep .2; clear; echo
+echo "$USER:~$ w"
+sleep .2; clear; echo
+echo "$USER:~$ who"
+sleep .2; clear; echo
+echo "$USER:~$ who "
+sleep .2; clear; echo
+echo "$USER:~$ who |"
+sleep .2; clear; echo
+echo "$USER:~$ who | "
+sleep .2; clear; echo
+echo "$USER:~$ who | s"
+sleep .2; clear; echo
+echo "$USER:~$ who | so"
+sleep .2; clear; echo
+echo "$USER:~$ who | sor"
+sleep .2; clear; echo
+echo "$USER:~$ who | sort"
+sleep 1.3
+

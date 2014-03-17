@@ -1,0 +1,62 @@
+# Script by: Isabel Huckaby
+# 
+# part of Choice #2 in menu
+# animated ghost: who else is on
+# animation that shows who is on the server at the time the script is running.
+
+clear
+cat w1
+sleep .2; clear
+cat w2
+sleep .2; clear
+cat w3
+sleep .2; clear
+cat w4
+sleep .2; clear 
+cat w5
+sleep .2; clear
+cat w6
+sleep .2; clear
+cat w7
+sleep .2; clear
+cat w8
+sleep .2; clear
+cat w9
+sleep .2; clear
+cat w1
+sleep .2; clear
+cat w2
+sleep .2; clear
+cat w3
+sleep .2; clear
+cat w4
+sleep .2; clear 
+cat w5
+sleep .2; clear
+cat w6
+sleep .2; clear
+cat w7
+sleep .2; clear
+cat w8
+sleep .2; clear
+cat w9
+sleep .2; clear
+cat w1
+sleep .2; clear
+cat w2
+sleep .2; clear
+cat w3
+sleep .2; clear
+cat w4
+sleep .2; clear 
+cat w5
+sleep .2; clear
+cat w6
+sleep .2; clear
+cat w7
+sleep .2; clear
+cat w8
+sleep .2; clear
+cat w9
+sleep 2
+

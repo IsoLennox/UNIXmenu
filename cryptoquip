@@ -1,0 +1,91 @@
+# Script by Isabel Huckaby
+#
+# a letter replacement game
+# uses 4 additional files to operate correctly:
+# file 1: "newgame"
+# file 2: "newgame1"
+# file 3: "qanswer"
+# file 4: "scrambled"
+
+# flow:
+#
+# screen clears
+# file, scrambled is copied and overwrites file, newgame. This is done because users answers
+# are also overwriting newgame as the game is being played. Once the game is over and the script
+# is restarted, newgame is refreshed to the start of the puzzle.
+#
+# menu asks user if they want to play, see answer, or quit.
+# see answer, shows file, qanswer
+# quit routes user back to main menu in final script, "shortscript"
+#
+# user is asked to choose a letter to replace, that letter is assigned to variable, old.
+# user is asked to choose a new letter to replace the old letter with.
+# User is asked to make the new letter CAPITAL. This avoids duplication of letters that were meant to be different answers.
+# new letter is assigned to variable, new.
+# using the 'tr' command, varibale "old" is replaced with varible "new" in file "newgame" and is saved to overwrite "newgame1"
+# this method is used because if the user tries to overwrite the same file, it turns up empty as a result of an overwrite,noclobber error.
+# process is repeated, switching the order of newfile and newfile1 overwriting eachother.
+#
+
+
+clear
+cat scrambled > newgame
+
+until [ 3 = 4 ]
+do
+
+echo;echo "SOLVE THIS CRYPTOQUIP PUZZLE!"
+echo;echo "replace each scrambled letter with the real one to decode this message!"
+echo;echo;echo
+cat newgame
+echo;echo;echo
+
+echo "PLAY (1)   SEE ANSWER (2)   QUIT (3)"
+read play
+
+if [ $play = 1 ]
+then
+echo -n "Letter to replace:  "
+read old
+echo;echo "Make your replacement letter CAPITAL:"
+echo
+echo -n "Replacement letter:  "
+read new
+
+cat newgame | tr "$old" "$new" > newgame1
+echo;echo;echo 
+
+cat newgame1
+clear
+
+echo;echo "SOLVE THIS CRYPTOQUIP PUZZLE!"
+echo;echo "replace each scrambled letter with the real one to decode this message!"
+echo;echo;echo
+cat newgame1
+echo;echo;echo
+echo "menu will return after next replacement:"
+echo
+echo -n "Letter to replace:  "
+read old
+echo;echo "Make your replacement letter CAPITAL:"
+echo
+echo -n "Replacement letter:  "
+read new
+
+cat newgame1 | tr "$old" "$new" > newgame
+echo;echo;echo
+cat newgame
+clear
+
+
+
+elif [ $play = 2 ]
+then
+	cat qanswer
+	echo;echo "Press <ENTER> to continue"
+	read ignore
+	./shortscript
+else
+	./shortscript
+fi
+done

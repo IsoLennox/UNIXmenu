@@ -1,0 +1,29 @@
+#Script by Isabel Huckaby
+#
+# Main menu for the user to choose
+# Graphical only
+#
+# "\e...\e[0m" are codes for color
+#
+echo
+echo -e "\e[1;31m 		Please select a menu option: \e[0m"
+echo
+echo -e "\e[0;32m	1\e[0m. Play Cryptoquip."
+echo
+echo -e "\e[0;32m	2\e[0m. See who else is on."
+echo
+echo -e "\e[0;32m	3\e[0m. Back up/ Make a copy of a file."
+echo
+echo -e "\e[0;32m	4\e[0m. See the calendar for the year and month you were born."
+echo
+echo -e "\e[0;32m	5\e[0m. See a short animation."
+echo
+echo -e "\e[0;32m	6\e[0m. Play Heads or Tails. "
+echo
+echo -e "\e[0;32m	7\e[0m. See 'Heads or Tails' Score board."
+echo
+echo -e "\e[0;32m	8\e[0m. Watch Star Wars"
+echo
+echo -e "\e[0;32m	9\e[0m. Exit"
+echo
+echo

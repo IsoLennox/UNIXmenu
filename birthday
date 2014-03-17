@@ -1,0 +1,37 @@
+# script by: Isabel Huckaby	
+#
+# choice # 4 in menu
+# asks for user input:
+# birth month and year
+# Shows user calendar based on user input.
+
+clear
+echo 
+echo 
+echo -n "Your Month of birth:"
+read mo
+
+
+echo 
+echo 
+
+echo -n "The year of your birth (yyyy):"
+read yr
+
+
+echo 
+clear
+echo 
+echo
+cal $mo $yr
+echo
+echo "Would you like to try another date? y or n:"
+echo 
+read yn2
+echo
+if [ $yn2 = y ]
+then
+	clear; ./birthday
+else
+		./shortscript
+fi

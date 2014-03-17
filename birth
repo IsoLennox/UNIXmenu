@@ -1,0 +1,97 @@
+clear
+echo 
+echo "Please enter Child's First Name:"
+echo 
+read kid1
+clear
+echo 
+echo "Please enter Child's Last Name:"
+echo
+read kid2
+clear
+echo
+echo "Please enter Child's Date Of Birth:"
+echo
+echo "Enter is mm/dd/yyyy format"
+echo
+read DOB
+clear
+echo
+echo "Please enter Mother's First Name:"
+echo
+read mom1
+clear
+echo
+echo "Please enter Mother's Last name:"
+echo
+read mom2
+clear
+echo
+echo "Please enter Father's First Name:"
+echo
+read dad1
+clear
+echo
+echo "Please enter Father's Last name:"
+echo
+read dad2
+clear
+echo
+echo
+echo "Would you like to print your certificate?"
+echo
+echo "Please enter y or n"
+echo
+read yn
+echo
+if [ $yn = y ] 
+then
+	clear
+	echo
+	echo
+	echo "		CONGRATS $mom1 $mom2 AND $dad1 $dad2"
+	echo "		ON THE BIRTH OF $kid1 $kid2"
+	echo "		ON THIS DAY: $DOB"
+	echo
+	echo
+	echo
+	echo
+	sleep 2
+	echo "Would you like to start over?"
+	echo
+	echo "y or n"
+	read yn3
+	if [ $yn3 = y ]
+	then
+		clear
+		./birth
+	else
+		clear
+		echo
+		echo
+		echo
+		echo "Thank you, Goodbye!"
+		echo
+		sleep 1
+		exit
+	fi
+
+else
+	clear
+	echo
+	echo "Would you like to start over?"
+	echo
+	echo "y or n"
+	read yn2
+	if [ $yn2 = y ]
+	then
+		clear
+		./birth	
+	else
+		clear
+		echo 
+		echo "Thank you, Goodbye!"
+		sleep 1
+		exit
+fi
+fi

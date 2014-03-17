@@ -1,0 +1,101 @@
+#Made by: Isabel Huckaby
+#
+# This game keeps track of score as well as:
+
+# randomizes phrases when player loses a round
+# randomizes points given and lost when game is in play
+# randomizes the result, but tells the player what the result was, and the answer they chose
+# records users name and score into a score board
+# Needs following files to run correctly:
+# file 1: "parts" :  file that contains lines to randomize as responces.
+# file 2: "sorry : random line from "parts" is moved into "sorry". "sorry" is then called to show contents, as a responce to users wrong guess.
+#
+# Scoreboard for this game is file, "htscoreboard"
+#
+#
+
+clear
+HP=20
+
+until [ $HP -le 0 ]
+do
+count=$(( ( RANDOM % 2 )  + 1 ))
+shuf -n 1 parts > sorry
+
+        echo -e "You have\e[1;32m $HP\e[0m HP."
+echo;echo
+
+echo "1. Heads"
+echo "2. Tails"
+echo;echo;echo "FLIP! Heads(1) or Tails(2)?  "
+echo;echo "[ type <ENTER> to Save your score and quit ]"
+echo;echo
+read guess
+
+if [ $count -eq 2 ]
+then
+	echo;echo
+	echo "TOSS RESULT!  TAILS!"
+	echo;echo
+else
+	echo;echo
+	echo "TOSS RESULT! HEADS!"
+	echo;echo
+fi
+
+
+if [ $guess -eq 2 ]
+then
+	echo;echo "Youre guess was TAILS!"
+	echo;echo
+elif [ $guess -eq 1 ]
+then
+	echo;echo "Youre guess was HEADS!"
+	echo;echo
+else
+        clear
+	echo;echo -n "What is your name?    "
+        read name
+        echo "SCORE:	$HP		PLAYER:  $name" >> htscoreboard
+        echo; echo "Thanks, $name! You've been added to the scoreboard!"
+	echo;echo "	TOP 15 HEADS OR TAILS SCORES:"
+	echo;echo
+        cat htscoreboard | sort -rn | head -15
+        echo;echo;echo "Hit <enter> to exit "
+        read ignore;clear
+	./shortscript
+fi
+	
+
+
+
+if [ $guess -eq $count ]
+then
+		
+
+	scoreup=$(( ( RANDOM % 5 )  + 1 ))
+        echo -e "\e[1;32m Good job! You have gained +$scoreup HP! \e[0m"
+        HP=$(( $HP + $scoreup ))
+	echo;echo "Hit <ENTER> to continue.";read ignore;clear
+
+else
+
+	scoredown=$(( ( RANDOM % 5 )  + 1 ))
+        echo -e "\e[1;31m`cat sorry`! -$scoredown HP \e[0m"
+        HP=$(( $HP - $scoredown ))
+	echo;echo "Hit <ENTER> to continue.";read ignore;clear
+fi
+echo;echo
+
+
+done
+cat loser
+echo;echo
+echo -n "Play again? y or n: "
+read yn
+if [ $yn = y ]
+then
+	./headtails
+else
+	./shortscript
+fi
